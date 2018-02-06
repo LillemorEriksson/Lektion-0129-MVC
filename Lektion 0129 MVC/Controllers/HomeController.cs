@@ -21,14 +21,26 @@ namespace Lektion_0129_MVC.Controllers
         }
 
         [HttpGet]
-        public ActionResult TestingForm()
+        public ActionResult Mattetabel()
         {
             return View();
         }
 
-        [ HttpPost]
-        public ActionResult TestingForm(int multi)
+        [HttpPost]
+        public ActionResult Mattetabel(int multi)
         {
+            List<int> nummerna = new List<int>();
+
+            if (Session["vilkaNummer"] != null)
+            {
+                            // type-cast
+                nummerna = (List<int>)Session["vilkaNummer"];
+            }
+
+            nummerna.Add(multi);// lägga till nya nummer
+            Session["vilkaNummer"] = nummerna;// spara listan med nummer
+
+
             ViewBag.multi = multi;
 
             return View();

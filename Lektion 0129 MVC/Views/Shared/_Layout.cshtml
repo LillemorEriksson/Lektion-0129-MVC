@@ -7,6 +7,8 @@
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -17,7 +19,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Hem", "Index", "Hem", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Hem", "Index", "Hem", new { area = "" }, new { @class = "navbar-brand" }) @* <li>@Html.ActionLink("about", "Index", "Hem")</li>@*Hem = text, Index =action, home = Controller*@
                 @Html.ActionLink("Portfolio", "Index", "Portfolio", new { area = "" }, new { @class = "navbar-brand" })
                 @Html.ActionLink("Foto", "Index", "Foto", new { area = "" }, new { @class = "navbar-brand" })
                 @Html.ActionLink("Tavlor", "Index", "Tavlor", new { area = "" }, new { @class = "navbar-brand" })
@@ -26,9 +28,9 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                   @* <li>@Html.ActionLink("about", "Index", "Hem")</li>@*Hem = text, Index =action, home = Controller*@ 
                     <li>@Html.ActionLink("om", "About", "Home")</li>
-                    <li>@Html.ActionLink("Gånger tabel", "TestingForm", "Home")</li>
+                    <li>@Html.ActionLink("Gånger tabel", "Mattetabel", "Home")</li>
+                    <li>@Html.ActionLink("Index", "Mattetabel", "Home")</li>
                 </ul>
             </div>
         </div>
@@ -42,7 +44,6 @@
         </footer>
     </div>
 
-    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
-    <script src="~/Scripts/bootstrap.min.js"></script>
+
 </body>
 </html>
