@@ -31,7 +31,7 @@ namespace Lektion_0129_MVC.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create([Bind (Include = "MaxSpeed,Model,Brand")] Car car)//( double MaxSpeed, string Brand, string Model)
+        public ActionResult Create([Bind(Include = "MaxSpeed,Model,Brand")] Car car)//( double MaxSpeed, string Brand, string Model)
         {
 
             if (ModelState.IsValid)
@@ -39,7 +39,7 @@ namespace Lektion_0129_MVC.Controllers
             {
                 db.Add(car); //db.Add(new Car() { MaxSpeed = MaxSpeed, Brand = Brand, Model = Model });
             }
-             else
+            else
             {
                 return View(car);
             }
@@ -47,9 +47,18 @@ namespace Lektion_0129_MVC.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult RemoveCar(int carID)
+        public ActionResult RemoveCar(int? carID)
         {
-            db.Remove(db.SingleOrDefault(c => c.Id == carID));// kräver ett lamdauttryck
+            if (carID != null)
+            {
+                var car = db.SingleOrDefault(c => c.Id == carID);
+                if (car != null)
+                {
+                    db.Remove(car);
+                }
+
+            }
+            //;// kräver ett lamdauttryck
             return RedirectToAction("Index");
         }
     }

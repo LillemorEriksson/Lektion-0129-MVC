@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Lektion_0129_MVC.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,7 +13,11 @@ namespace Lektion_0129_MVC.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-            return View();
+            Car myCar = new Car() { Brand = "Saab", Model = "900", MaxSpeed = 246 };
+            Boat myBoat = new Boat() {Id =1, Name = "Titanic", Info = "Sunken"};
+            CarBoatViewModel vm = new CarBoatViewModel() { Car = myCar, Boat = myBoat };
+
+            return View(vm);
         }
 
         public ActionResult About()

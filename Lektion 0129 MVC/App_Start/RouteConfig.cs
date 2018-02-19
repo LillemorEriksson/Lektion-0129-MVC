@@ -14,10 +14,35 @@ namespace Lektion_0129_MVC
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+              name: "CarsToBilar",
+              url: "Bilar",
+              defaults: new { controller = "Cars", action = "Index", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+                name: "Test",
+                url: "Om",
+                defaults: new { controller = "Home", action = "About", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+                name: "Mattetabel",
+                url: "Mattetabel",
+                defaults: new { controller = "Home", action = "Gånger tabel", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+                name: "HomeToHem",
+                url: "Hem/{action}/{id}",
+                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }// detta är för url rader webbaddres localhostraden, detta kalas mapruts ruterna på kartan.
+            );
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+
         }
     }
 }

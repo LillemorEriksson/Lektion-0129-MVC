@@ -22,15 +22,14 @@
                 @Html.ActionLink("Hem", "Index", "Hem", new { area = "" }, new { @class = "navbar-brand" }) @* <li>@Html.ActionLink("about", "Index", "Hem")</li>@*Hem = text, Index =action, home = Controller*@
                 @Html.ActionLink("Portfolio", "Index", "Portfolio", new { area = "" }, new { @class = "navbar-brand" })
                 @Html.ActionLink("Foto", "Index", "Foto", new { area = "" }, new { @class = "navbar-brand" })
-                @Html.ActionLink("Tavlor", "Index", "Tavlor", new { area = "" }, new { @class = "navbar-brand" })
-                @Html.ActionLink("Blank", "Index", "Blank", new { area = "" }, new { @class = "navbar-brand" })
-                @Html.ActionLink("Blank", "Index", "Blank", new { area = "" }, new { @class = "navbar-brand" })
+           
+                
             </div>
-            <div class="navbar-collapse collapse">
+            <div class="pull-right">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("om", "About", "Home")</li>
+                    <li>@Html.ActionLink("Om", "About", "Home")</li>
                     <li>@Html.ActionLink("Gånger tabel", "Mattetabel", "Home")</li>
-                    <li>@Html.ActionLink("Index", "Mattetabel", "Home")</li>
+                    <li>@Html.ActionLink("CarIndex", "Index", "Cars")</li>
                 </ul>
             </div>
         </div>
@@ -40,7 +39,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application Lillemor Eriksson   <i class="glyphicon glyphicon-thumbs-up"></i></p>
         </footer>
     </div>
 
