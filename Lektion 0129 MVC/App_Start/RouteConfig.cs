@@ -15,7 +15,7 @@ namespace Lektion_0129_MVC
 
             routes.MapRoute(
               name: "CarsToBilar",
-              url: "Bilar",
+              url: "Bilar/{action}",
               defaults: new { controller = "Cars", action = "Index", id = UrlParameter.Optional }
             );
 
@@ -28,7 +28,7 @@ namespace Lektion_0129_MVC
             routes.MapRoute(
                 name: "Mattetabel",
                 url: "Mattetabel",
-                defaults: new { controller = "Home", action = "Gånger tabel", id = UrlParameter.Optional }
+                defaults: new { controller = "Home", action = "Mattetabel", id = UrlParameter.Optional }
             );
 
             routes.MapRoute(

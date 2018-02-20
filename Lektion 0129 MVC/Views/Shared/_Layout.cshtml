@@ -25,7 +25,7 @@
            
                 
             </div>
-            <div class="pull-right">
+            <div class="icon-bar">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Om", "About", "Home")</li>
                     <li>@Html.ActionLink("Gånger tabel", "Mattetabel", "Home")</li>
@@ -39,7 +39,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application Lillemor Eriksson   <i class="glyphicon glyphicon-thumbs-up"></i></p>
+            <p>&copy; @DateTime.Now.ToShortDateString()  - My ASP.NET Application Lillemor Eriksson   
         </footer>
     </div>
 
