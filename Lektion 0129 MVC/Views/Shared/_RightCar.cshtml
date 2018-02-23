@@ -1,0 +1,11 @@
+﻿@model Lektion_0129_MVC.Models.Car
+
+<div class="row" style="background-color:blueviolet">@*så här kan man ändra färgerna, sedan går du till index för car,måtten mm ligger bootstrap *@ 
+    <div class="col-md-2 "> Id: @Model.Id</div>
+    <div class="col-md-3 "> Brand: @Model.Brand</div>
+    <div class="col-md-3 "> Model: @Model.Model</div>
+    <div class="col-md-2 ">maxSpeed: @Model.MaxSpeed</div>
+    <div class="col-md-2 "> maxSpeed:@Html.ActionLink("Remove", "RemoveCar", new { carId = Model.Id }, new { @class = "btn btn-warning" }) 
+    </div>
+</div>
+<hr />

@@ -1,4 +1,5 @@
-﻿@model Lektion_0129_MVC.Models.CarBoatViewModel
+﻿@using Lektion_0129_MVC.Models
+@model CarBoatViewModel
 @*@{
     ViewBag.Title = "Index";
 }
@@ -36,6 +37,10 @@
         </tr>
     }
 </table>
+
+@{ 
+    CarBoatViewModel temp = new CarBoatViewModel();// Bara ett exempel på hur man använder using i toppen.
+}
 
 <div class="row">
 

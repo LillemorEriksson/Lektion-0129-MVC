@@ -10,7 +10,7 @@ namespace Lektion_0129_MVC.Controllers
     public class CarsController : Controller
     {
 
-        static List<Car> db = new List<Car>()
+        static List<Car> db = new List<Car>()//db står för databas, dt datatabel, dd datadata
 
         {
           new Car(){Model = "900", Brand = "Sabb", MaxSpeed = 246}, // man behöver inte denna lista
