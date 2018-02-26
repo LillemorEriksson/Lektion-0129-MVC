@@ -1,0 +1,54 @@
+﻿@model Lektion_0129_MVC.Models.CarPCviewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>View Model Ex Index</h2>
+
+<div class="row">
+
+    <div class="col-md-6">
+        @foreach (var item in Model.Cars)
+        {
+            <div class="row">
+                <div class="col-md-4">
+                    @item.Brand
+                </div>
+
+                <div class="col-md-4">
+                    @item.Model
+                </div>
+
+                <div class="col-md-4">
+                    @item.MaxSpeed
+                </div>
+            </div>
+        }
+
+    </div>
+
+    <div class="col-md-6">
+        @foreach (var item in Model.Computer)
+        {
+            <div class="row">
+                <div class="col-md-3">
+                    @item.Name
+                </div>
+
+                <div class="col-md-3">
+                    @item.CUP
+                </div>
+
+                <div class="col-md-3">
+                    @item.Ram
+                </div>
+                <div class="col-md-3">
+                    @item.Info
+                </div>
+
+            </div>
+        }
+
+    </div>
+</div>

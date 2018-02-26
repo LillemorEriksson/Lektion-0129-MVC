@@ -14,7 +14,7 @@ namespace Lektion_0129_MVC.Controllers
         public ActionResult Index()
         {
             Car myCar = new Car() { Brand = "Saab", Model = "900", MaxSpeed = 246 };
-            Boat myBoat = new Boat() {Id =1, Name = "Titanic", Info = "Sunken"};
+            Boat myBoat = new Boat() { Id = 1, Name = "Titanic", Info = "Sunken" };
             CarBoatViewModel vm = new CarBoatViewModel() { Car = myCar, Boat = myBoat };
 
             return View(vm);
@@ -71,7 +71,7 @@ namespace Lektion_0129_MVC.Controllers
             myCookie = new HttpCookie("CookieNumbers");
             myCookie.Expires = DateTime.Now.AddHours(1);
 
-            foreach(int item in nummerna)
+            foreach (int item in nummerna)
             {
                 myCookie.Value += item.ToString() + 'q';
             }
@@ -84,5 +84,32 @@ namespace Lektion_0129_MVC.Controllers
 
             return View();
         }
+
+        public ActionResult Main()
+        {
+            List<Car> dbCars = new List<Car>()
+            {
+                new Car() { Brand= "saab", Model="900", MaxSpeed=240},
+                new Car() { Brand= "volvo", Model="240", MaxSpeed=200},
+                new Car() { Brand= "Volvo", Model="v60", MaxSpeed=400},
+                new Car() { Brand= "saab", Model="900", MaxSpeed=240},
+                new Car() { Brand= "saab", Model="900", MaxSpeed=240}
+            };
+
+            List<Computer> dbPCs = new List<Computer>()
+        {
+            new Computer(){ Id= 1, Name= "Lenovo", CUP= "i7 6700HQ", Ram=8, Info="Powerfull Laptop" },
+            new Computer(){ Id= 2, Name= "Dell", CUP= "i5 6600U", Ram=8, Info="Media Laptop" },
+            new Computer(){ Id= 3, Name= "HP", CUP= "i7 7700k", Ram=16, Info="Powerfull Laptop" }
+
+        };
+
+            CarPCviewModel vw = new CarPCviewModel();
+            vw.Cars = dbCars;
+            vw.Computer = dbPCs;
+
+            return View(vw);
+        }
+
     }
 }

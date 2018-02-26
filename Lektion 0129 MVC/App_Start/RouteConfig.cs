@@ -14,6 +14,12 @@ namespace Lektion_0129_MVC
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                name: "DatorRule",
+                url: "Dator",
+                defaults: new { controller = "ViewModelEx", action = "Main", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
               name: "CarsToBilar",
               url: "Bilar/{action}",
               defaults: new { controller = "Cars", action = "Index", id = UrlParameter.Optional }

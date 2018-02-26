@@ -51,7 +51,7 @@ namespace Lektion_0129_MVC.Controllers
         {
             if (carID != null)
             {
-                var car = db.SingleOrDefault(c => c.Id == carID);
+                var car = db.SingleOrDefault(c => c.Id == carID);// denna går med de festa, Finde har autogenerrering och passar inte till includ, hittar inte alla underlistor och retunerar null.
                 if (car != null)
                 {
                     db.Remove(car);
