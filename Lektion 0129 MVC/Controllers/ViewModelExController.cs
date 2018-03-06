@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 namespace Lektion_0129_MVC.Controllers
 {
-    public class ViewModelEx : Controller
+    public class ViewModelExController : Controller
     {
         static List<Car> dbCars = new List<Car>()
             {
@@ -27,13 +27,18 @@ namespace Lektion_0129_MVC.Controllers
         };
 
         // GET: ViewModelEx
-        public ActionResult Main()
+        public ActionResult Index()
         {
             CarPCviewModel vw = new CarPCviewModel();
             vw.Cars = dbCars;
             vw.Computer = dbPCs;
 
             return View(vw);
+        }
+
+        public ActionResult AjaxCars()
+        {
+            return PartialView(dbCars);
         }
     }
 }
